@@ -4,18 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.neo4j.core.schema.GeneratedValue;
-import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Property;
+import org.springframework.data.neo4j.core.schema.RelationshipId;
+import org.springframework.data.neo4j.core.schema.RelationshipProperties;
+import org.springframework.data.neo4j.core.schema.TargetNode;
 
 import java.util.List;
 
 @Getter @Setter @AllArgsConstructor @ToString
+@RelationshipProperties
 public class Roles{
 
-    @Id
-    @GeneratedValue
-    private long id;
+    @RelationshipId
+    private Long id;
+
+    @TargetNode
+    private Person person;
 
     @Property("roles")
     private List<String> roles;
