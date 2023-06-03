@@ -1,4 +1,4 @@
-# spring-boot-crud-rest-api-neo4j
+# spring-boot-rest-api-crud-neo4j
 Spring Boot REST APIs with CRUD for Neo4j
 
 The brach with the working APIs is:
