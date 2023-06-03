@@ -3,7 +3,7 @@ Spring Boot REST APIs with CRUD for Neo4j
 
 The brach with the working APIs is:
 
-- ***basic_crud_w***: basic REST APIs transactional with CRUD for Neo4j
+- ***basic_crud_w***: it contains basic transactional REST APIs with CRUD for Neo4j
 
 It is necessary to explain how the post method works on the movies nodes. 
 
