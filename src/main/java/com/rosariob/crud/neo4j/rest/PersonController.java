@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,22 +50,8 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody Person person){
+    public ResponseEntity createOrReplace(@RequestBody Person person){
         try {
-            person.setId(null);
-            return ResponseEntity.ok(personService.save(person));
-        }
-        catch(Exception e){
-            return ResponseEntity.internalServerError().body(e.getMessage());
-        }
-    }
-
-    @PutMapping
-    public ResponseEntity update(@RequestBody Person person){
-        try {
-            if(person.getId() == null){
-                return ResponseEntity.badRequest().body("id cannot be null");
-            }
             return ResponseEntity.ok(personService.save(person));
         }
         catch(Exception e){

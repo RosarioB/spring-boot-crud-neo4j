@@ -13,12 +13,11 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 import java.util.List;
 
 @Node("Movie")
-@Getter @Setter  @AllArgsConstructor @ToString
+@Getter @Setter @AllArgsConstructor @ToString
 public class Movie {
 
     @Id
     @GeneratedValue
-    //@JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
 
     @Property("title")
@@ -29,7 +28,4 @@ public class Movie {
 
     @Relationship(type = "ACTED_IN", direction = Relationship.Direction.INCOMING)
     private List<Roles> actorsAndRoles;
-
-    @Relationship(type = "DIRECTED", direction = Relationship.Direction.INCOMING)
-    private List<Person> directors;
 }

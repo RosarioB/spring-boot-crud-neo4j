@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,36 +39,20 @@ public class MovieController {
     }
 
     @GetMapping
-    public ResponseEntity findAll(){
+    public ResponseEntity findAll() {
         try {
             List<Movie> found = movieService.findAll();
             return ResponseEntity.ok(found);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 
     @PostMapping
-    public ResponseEntity create(@RequestBody Movie movie){
+    public ResponseEntity createOrUpdate(@RequestBody Movie movie) {
         try {
-            movie.setId(null);
             return ResponseEntity.ok(movieService.save(movie));
-        }
-        catch(Exception e){
-            return ResponseEntity.internalServerError().body(e.getMessage());
-        }
-    }
-
-    @PutMapping
-    public ResponseEntity update(@RequestBody Movie movie){
-        try {
-            if(movie.getId() == null){
-                return ResponseEntity.badRequest().body("id cannot be null");
-            }
-            return ResponseEntity.ok(movieService.save(movie));
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }

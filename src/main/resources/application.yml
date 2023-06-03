@@ -10,4 +10,4 @@ application:
 
 logging:
   level:
-    org.springframework.data.neo4j: DEBUG
+    org.springframework.data.neo4j: TRACE

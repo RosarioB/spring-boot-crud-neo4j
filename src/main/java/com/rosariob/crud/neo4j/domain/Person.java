@@ -21,10 +21,4 @@ public class Person {
 
     @Property("born")
     private String born;
-
-    /*@Relationship(type = "ACTED_IN", direction = Relationship.Direction.OUTGOING)
-    private List<Roles> actorsAndRoles;
-
-    @Relationship(type = "DIRECTED", direction = Relationship.Direction.OUTGOING)
-    private List<Person> directors;*/
 }
