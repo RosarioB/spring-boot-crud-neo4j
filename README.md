@@ -54,6 +54,6 @@ Instead if you specify the ids of existing nodes and relationships, like this:
 
 Spring data Neo4j will "override" the properties of each node and relationships with the specified ids. 
 
-So it will not create new nodes or relationship (if they already exist) but will modify the nodes and the relationships with the ids specified in the request.
+So it will not create new nodes or relationship (if they already exist) but it will modify the nodes and the relationships with the ids specified in the request.
 
 
