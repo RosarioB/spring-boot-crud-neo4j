@@ -25,7 +25,7 @@ For example if you call the post method at http://localhost:8080/api/movies with
 }
 ```
 
-Spring data Neo4j will create create this:
+Spring data Neo4j will create a new node Movie, a new node Person and a new relationship ACTED_IN, like this:
 
 ![image](https://github.com/RosarioB/spring-boot-crud-rest-api-neo4j/assets/81154242/77188630-85e2-4bbd-8103-4a4548c4a34f)
 
